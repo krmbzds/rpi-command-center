@@ -1,0 +1,31 @@
+!!!
+%html
+  %head
+    %title Raspberry Pi Control Center
+  %body
+    .row-fluid.col-lg-6
+      %h1.text-center Command Center
+      %table.table.table-striped.text-center
+        %tr
+          %th.text-center State
+          %th.text-center Message
+          %th.text-center Actions
+        %tr
+          %td
+            = state
+            %a{ :href => '/server/'}
+              %i{ :class => 'fa fa-lg fa-refresh', :style => "color: lapis; "}
+          %td
+            = message
+            - if state == "Online"
+              %i{ :class => 'fa fa-circle', :style => "color: lightgreen;"}
+            - elsif state == "Offline"
+              %i{ :class => 'fa fa-circle', :style => "color: red;"}
+
+          %td
+            %a{ :href => '/server/on'}
+              %button{:class => 'btn, btn-primary'} Send Magic Packet
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css", :rel => "stylesheet"}/
+    %link{:href => "https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css", :rel => "stylesheet"}/
+    %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"}
