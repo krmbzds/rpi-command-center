@@ -1,0 +1,4 @@
+mac_addr: 'aa:bb:cc:dd:ee:ff'
+local_ip: '192.168.X.YY'
+username: 'foo'
+password: 'bar'
